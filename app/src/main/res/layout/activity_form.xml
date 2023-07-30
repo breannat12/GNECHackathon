@@ -81,7 +81,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -102,17 +103,464 @@
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumber"
-                        android:layout_width="140dp"
-                        android:layout_height="79dp"
-                        android:layout_margin="10dp"
-                        android:ems="10"
-                        android:inputType="number" />
+                        android:id="@+id/numBox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="25dp"
+                        android:hint="select here"
+                        android:inputType="number"
+                        android:shadowColor="#FFFFFF"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </LinearLayout>
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="#D9E8F1">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="How often do you feel unsafe because fo the people around you at home?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/numBox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="select here"
+                        android:inputType="number"
+                        android:shadowColor="#FFFFFF"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="How often do you feel unsafe because of the people around you at school?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/numBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="select here"
+                        android:inputType="number"
+                        android:shadowColor="#FFFFFF"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="#D9E8F1">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="How often do you feel something bad might happen?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/numBox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="select here"
+                        android:inputType="number"
+                        android:shadowColor="#FFFFFF"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="How often do you have trouble sleeping or trouble sleeping too much?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/numBox5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="select here"
+                        android:inputType="number"
+                        android:shadowColor="#FFFFFF"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form_bg">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Q6 - Q8: Answer Yes or No"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have someone to talk to when feeling unsafe or scared?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Yes"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1No"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:buttonTint="#00FFFFFF"
+                        android:text="No"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#D9E8F1">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Has anyone physically hurt you in the past 2 weeks?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Yes"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1No"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:buttonTint="#00FFFFFF"
+                        android:text="No"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Has anyone physically hurt you in the past 2 weeks?"
+                        android:textSize="14dp"
+                        tools:layout_margin="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Yes"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="#1F2D69"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1No"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:buttonTint="#00FFFFFF"
+                        android:text="No"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/form_bg">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Q9: What was a time in the last 2 weeks when you felt unsafe or scared?"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <EditText
+                    android:id="@+id/textEntry1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#E4F2FB"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="start typing..."
+                    android:inputType="textMultiLine"
+                    android:textSize="14dp" />
+            </TableRow>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/form_bg">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Q10: What was a time in the last two weeks when you felt happy?"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#E4F2FB">
+
+                <EditText
+                    android:id="@+id/textEntry2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#E4F2FB"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="start typing..."
+                    android:inputType="textMultiLine"
+                    android:textSize="14dp" />
+            </TableRow>
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Submit" />
 
         </LinearLayout>
     </ScrollView>
