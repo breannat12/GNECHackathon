@@ -480,6 +480,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/form_bg">
 
                 <TextView
@@ -518,6 +519,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/form_bg">
 
                 <TextView
@@ -552,6 +554,15 @@
                     android:inputType="textMultiLine"
                     android:textSize="14dp" />
             </TableRow>
+
+            <Button
+                android:id="@+id/imgButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                android:onClick="openFileDialog"
+                android:text="If anyone has hurt you anywhere, take a picture and upload it here."
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/submitButton"
