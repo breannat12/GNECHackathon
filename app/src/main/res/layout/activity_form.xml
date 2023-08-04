@@ -559,10 +559,11 @@
                 android:id="@+id/imgButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10sp"
                 android:background="@drawable/button_bg"
                 android:onClick="openFileDialog"
                 android:text="If anyone has hurt you anywhere, take a picture and upload it here."
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/submitButton"
