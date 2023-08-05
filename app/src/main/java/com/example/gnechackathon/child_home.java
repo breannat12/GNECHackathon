@@ -10,6 +10,7 @@ import android.widget.Button;
 public class child_home extends AppCompatActivity {
 
     private Button formButton;
+    private Button safeSpotButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,23 @@ public class child_home extends AppCompatActivity {
                 openForm();
             }
         });
+
+        safeSpotButton = (Button) findViewById(R.id.safeSpotButton);
+        safeSpotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSafeSpots();
+            }
+        });
     }
 
     public void openForm() {
         Intent intent = new Intent(this, form.class);
+        startActivity(intent);
+    }
+
+    public void openSafeSpots() {
+        Intent intent = new Intent(this, safeSpots.class);
         startActivity(intent);
     }
 }

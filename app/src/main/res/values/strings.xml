@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GNECHackathon</string>
+    <string name="title_activity_safe_spots2">safeSpots2</string>
+    <string name="my_map_api_key">AIzaSyCjCjAAnhwMdlofrOpkUq-Fy9z_uh8SqYQ</string>
 </resources>
