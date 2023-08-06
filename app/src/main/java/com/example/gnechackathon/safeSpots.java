@@ -9,6 +9,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -31,8 +33,11 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
     private final int FINE_PERMISSION_CODE = 1;
     private GoogleMap myMap;
     private SearchView mapSearchView;
+    private double lat, lng;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
+
+    Button policeStationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +79,29 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
                 return false;
             }
         });
+
+        policeStationButton = findViewById(R.id.policeStationButton);
+        policeStationButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                StringBuilder stringBuilder = new StringBuilder("http://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+                stringBuilder.append("location=" + lat + "," + lng);
+                stringBuilder.append("&radius=1000");
+                stringBuilder.append("&type=atm");
+                stringBuilder.append("&sensor=true");
+                stringBuilder.append("&key=" + getResources().getString(R.string.my_places_api_key));
+
+                String url= stringBuilder.toString();
+                Object dataFetch[]=new Object[2];
+                dataFetch[0]=myMap;
+                dataFetch[1]=url;
+
+                FetchData fetchData = new FetchData();
+                fetchData.execute(dataFetch);
+
+            }
+        });
     }
 
     private void getLastLocation() {
@@ -87,6 +115,8 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
             public void onSuccess(Location location) {
                 if(location != null) {
                     currentLocation = location;
+                    lat=location.getLatitude();
+                    lng=location.getLongitude();
 
                     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
                     mapFragment.getMapAsync(safeSpots.this);
