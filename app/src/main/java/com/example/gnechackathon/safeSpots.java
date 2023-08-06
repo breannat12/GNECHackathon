@@ -21,7 +21,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +41,18 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
     FusedLocationProviderClient fusedLocationProviderClient;
 
     Button policeStationButton;
+    Button hospitalButton;
+
+    private boolean policeOn = false;
+    private boolean hospitalOn = false;
+
+    Marker policeMarker1;
+    Marker policeMarker2;
+    Marker policeMarker3;
+
+    Marker hospitalMarker1;
+    Marker hospitalMarker2;
+    Marker hospitalMarker3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +80,10 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
                         throw new RuntimeException(e);
                     }
 
-//                    Address address = addressList.get(0);
-//                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-//                    myMap.addMarker(new MarkerOptions().position(latLng).title(location));
-//                    myMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                    Address address = addressList.get(0);
+                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                    myMap.addMarker(new MarkerOptions().position(latLng).title(location));
+                    myMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                 }
 
                 return false;
@@ -85,23 +100,75 @@ public class safeSpots extends AppCompatActivity implements OnMapReadyCallback {
 
             @Override
             public void onClick(View view) {
-                Log.d("ButtonClick", "Police button clicked");
-                StringBuilder stringBuilder = new StringBuilder("http://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                stringBuilder.append("location=" + currentLocation.getLatitude() + "," + currentLocation.getLatitude());
-                stringBuilder.append("&radius=1000");
-                stringBuilder.append("&type=atm");
-                stringBuilder.append("&sensor=true");
-                stringBuilder.append("&key=" + getResources().getString(R.string.my_places_api_key));
 
-                String url= stringBuilder.toString();
-                Object dataFetch[]=new Object[2];
-                dataFetch[0]=myMap;
-                dataFetch[1]=url;
+                if (policeOn == false) {
+                    float hue = 240; // Blue color
+                    BitmapDescriptor markerIcon = BitmapDescriptorFactory.defaultMarker(hue);
+                    LatLng police1 = new LatLng(32.9592113, -117.1228005);
+                    policeMarker1 =myMap.addMarker(new MarkerOptions()
+                            .position(police1)
+                            .title("San Diego Police Department")
+                            .icon(markerIcon));
 
-                FetchData fetchData = new FetchData();
-                fetchData.execute(dataFetch);
+                    LatLng police2 = new LatLng(32.7494320804, -117.081239424);
+                    policeMarker2 = myMap.addMarker(new MarkerOptions()
+                            .position(police2)
+                            .title("San Diego Police Department")
+                            .icon(markerIcon));
+                    LatLng police3 = new LatLng(32.9474838, -117.2379002);
+                    policeMarker3 = myMap.addMarker(new MarkerOptions()
+                            .position(police3)
+                            .title("San Diego Police Department")
+                            .icon(markerIcon));
 
+                    policeOn = true;
+                }
+                else if (policeOn == true) {
+                    policeMarker1.remove();
+                    policeMarker2.remove();
+                    policeMarker3.remove();
+                    policeOn = false;
+                }
             }
+
+        });
+
+        hospitalButton = findViewById(R.id.hospitalButton);
+        hospitalButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                if (hospitalOn == false) {
+                    float hue = 120; // Blue color
+                    BitmapDescriptor markerIcon = BitmapDescriptorFactory.defaultMarker(hue);
+                    LatLng hospital1 = new LatLng(32.751545, -117.1605);
+                    hospitalMarker1 =myMap.addMarker(new MarkerOptions()
+                            .position(hospital1)
+                            .title("Scripps Mercy Hospital San Diego")
+                            .icon(markerIcon));
+
+                    LatLng hospital2 = new LatLng(32.799493, -117.153945);
+                    hospitalMarker2 = myMap.addMarker(new MarkerOptions()
+                            .position(hospital2)
+                            .title("Sharp Memorial Hospital")
+                            .icon(markerIcon));
+                    LatLng hospital3 = new LatLng(32.777243, -117.057335);
+                    hospitalMarker3 = myMap.addMarker(new MarkerOptions()
+                            .position(hospital3)
+                            .title("Alvarado Hospital Medical Center")
+                            .icon(markerIcon));
+
+                    hospitalOn = true;
+                }
+                else if (hospitalOn == true) {
+                    hospitalMarker1.remove();
+                    hospitalMarker2.remove();
+                    hospitalMarker3.remove();
+                    hospitalOn = false;
+                }
+            }
+
         });
     }
 
