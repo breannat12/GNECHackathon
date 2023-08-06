@@ -13,6 +13,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
@@ -22,7 +24,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 
-public class FetchData extends AsyncTask<Object, String, String> {
+public class FetchData extends AsyncTask<Object,String,String> {
 
     String googleNearbyPlacesData;
     GoogleMap googleMap;
@@ -61,10 +63,11 @@ public class FetchData extends AsyncTask<Object, String, String> {
     @Override
     protected String doInBackground(Object... objects) {
         try {
-            googleMap=(GoogleMap) objects[0];
-            url=(String) objects[1];
+            Log.d("AsyncTask", "Fetching data...");
+            googleMap = (GoogleMap) objects[0];
+            url = (String) objects[1];
             DownloadUrl downloadUrl = new DownloadUrl();
-            googleNearbyPlacesData= downloadUrl.retrieveUrl(url);
+            googleNearbyPlacesData = downloadUrl.retrieveUrl(url);
         } catch (IOException e) {
             e.printStackTrace();
         }

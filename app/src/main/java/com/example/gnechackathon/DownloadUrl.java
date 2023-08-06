@@ -12,36 +12,40 @@ import java.net.URL;
 public class DownloadUrl {
 
     public String retrieveUrl(String url) throws IOException {
-        String urlData="";
         HttpURLConnection httpURLConnection = null;
         InputStream inputStream = null;
+        String urlData = null;
 
         try {
             URL getUrl = new URL(url);
-            httpURLConnection=(HttpURLConnection) getUrl.openConnection();
+            httpURLConnection = (HttpURLConnection) getUrl.openConnection();
             httpURLConnection.connect();
 
-            inputStream=httpURLConnection.getInputStream();
+            if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                inputStream = httpURLConnection.getInputStream();
 
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
-            StringBuffer sb = new StringBuffer();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder sb = new StringBuilder();
 
-            String line = "";
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
 
-            while ((line = bufferedReader.readLine())!=null) {
-                sb.append(line);
+                urlData = sb.toString();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e; // Rethrow the exception
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (httpURLConnection != null) {
+                httpURLConnection.disconnect();
+            }
+        }
 
-            urlData = sb.toString();
-            bufferedReader.close();
-        }
-        catch (Exception e) {
-            Log.d("Exception", e.toString());
-        }
-        finally {
-            inputStream.close();
-            httpURLConnection.disconnect();
-        }
         return urlData;
     }
 }
